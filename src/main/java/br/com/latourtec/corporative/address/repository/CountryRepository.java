@@ -1,6 +1,7 @@
 package br.com.latourtec.corporative.address.repository;
 
 import br.com.latourtec.corporative.address.model.CountryEntity;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
@@ -14,6 +15,7 @@ public interface CountryRepository extends PagingAndSortingRepository<CountryEnt
 	@Query("select entity from CountryEntity entity where entity.uuid = :uuid")
 	Optional<CountryEntity> findBy(@Param("uuid") String uuid);
 	
-	@Query("delete from CountryEntity entity where entity.uuid = :uuid")
+	@Modifying
+	@Query("delete from CountryEntity  where uuid = :uuid")
 	Integer delete(@Param("uuid") String uuid);
 }
