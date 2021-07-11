@@ -1,6 +1,5 @@
 package br.com.latourtec.corporative.address.config;
 
-import br.com.latourtec.corporative.address.api.controller.CountryController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.hateoas.client.LinkDiscoverer;
